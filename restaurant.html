@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management System</title>
+    <link rel="stylesheet" href="restaurant.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Our Restaurant</h1>
+            <div>
+                <button onclick="showLogin('owner')">Owner Login</button>
+                <button onclick="showLogin('customer')">Customer Login</button>
+            </div>
+        </header>
+
+        <!-- Login Section -->
+        <section id="login-section" class="hidden">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button onclick="loginUser()">Login</button>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu-section" class="hidden">
+            <h2>Restaurant Menu</h2>
+            <label for="cuisine-filter">Filter by Cuisine:</label>
+            <select id="cuisine-filter" onchange="filterMenu()">
+                <option value="all">All</option>
+                <option value="Italian">Italian</option>
+                <option value="Indian">Indian</option>
+                <option value="Mexican">Mexican</option>
+            </select>
+            <div id="menu-items"></div>
+        </section>
+
+        <!-- Order Section -->
+        <section id="order-section" class="hidden">
+            <h2>Your Order</h2>
+            <div id="order-list"></div>
+            <h3>Total: $<span id="total-price">0.00</span></h3>
+            <button onclick="generateBill()">Generate Bill</button>
+        </section>
+
+        <!-- Feedback Section -->
+        <section id="feedback-section" class="hidden">
+            <h2>Customer Feedback</h2>
+            <textarea id="feedback-text" rows="4" placeholder="Enter your feedback here..."></textarea>
+            <button onclick="submitFeedback()">Submit Feedback</button>
+        </section>
+    </div>
+
+    <script src="restaurant.js"></script>
+</body>
+</html>
